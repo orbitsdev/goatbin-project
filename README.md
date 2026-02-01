@@ -4,6 +4,8 @@
 
 A comprehensive traceability and halal certification management system for goat farming and meat distribution in the Philippines.
 
+---
+
 ## Project Status
 
 ```
@@ -26,30 +28,60 @@ A comprehensive traceability and halal certification management system for goat 
 
 **Current Phase:** Level 1 - High-Level Overview (Complete)
 **Date:** February 1, 2026
+**Next Step:** Clarification meeting, then Level 2 (Detailed Design)
 
-## Project Levels Overview
+---
 
-| Level | Name | Purpose | Output |
-|-------|------|---------|--------|
-| **Level 1** | High-Level Overview | Understand WHAT to build | Documents (Done) |
-| **Level 2** | Detailed Design | Understand HOW to build in detail | Specs, wireframes, user stories |
-| **Level 3** | Development | Actually BUILD the system | Working code |
-| **Level 4** | Deployment | RELEASE and maintain | Live system |
+## Documentation Guide
 
-## Level 1 - What We Completed
+### Core Documents (Read in Order)
 
-| Document | Purpose |
-|----------|---------|
-| [Stakeholders](STEP_01_STAKEHOLDERS.md) | WHO is involved |
-| [Roles & Permissions](STEP_02_USER_ROLES_PERMISSIONS.md) | WHO can do WHAT |
-| [Business Process Flow](STEP_03_BUSINESS_PROCESS_FLOW.md) | HOW it works |
-| [Modules & Features](STEP_04_MODULES_FEATURES.md) | WHAT to build |
-| [Database Design](STEP_05_DATABASE_DESIGN.md) | WHERE to store (overview) |
-| [Technical Architecture](STEP_06_TECHNICAL_ARCHITECTURE.md) | HOW to build (overview) |
+| # | Document | Purpose |
+|---|----------|---------|
+| 1 | [STEP_01_STAKEHOLDERS.md](STEP_01_STAKEHOLDERS.md) | WHO is involved |
+| 2 | [STEP_02_USER_ROLES_PERMISSIONS.md](STEP_02_USER_ROLES_PERMISSIONS.md) | WHO can do WHAT |
+| 3 | [STEP_03_BUSINESS_PROCESS_FLOW.md](STEP_03_BUSINESS_PROCESS_FLOW.md) | HOW it works |
+| 4 | [STEP_04_MODULES_FEATURES.md](STEP_04_MODULES_FEATURES.md) | WHAT to build |
+| 5 | [STEP_05_DATABASE_DESIGN.md](STEP_05_DATABASE_DESIGN.md) | WHERE to store data (overview) |
+| 6 | [STEP_06_TECHNICAL_ARCHITECTURE.md](STEP_06_TECHNICAL_ARCHITECTURE.md) | HOW to build it (overview) |
+
+### Updates & Action Items
+
+| # | Document | Purpose |
+|---|----------|---------|
+| 7 | [ADDENDUM_FORM_TERMINOLOGY_CHANGES.md](ADDENDUM_FORM_TERMINOLOGY_CHANGES.md) | Changes based on existing goat farm forms |
+| 8 | [MEETING_AGENDA_CLARIFICATION.md](MEETING_AGENDA_CLARIFICATION.md) | Questions that need team discussion |
+
+### Reference / Educational (Optional Reading)
+
+| # | Document | Purpose |
+|---|----------|---------|
+| 9 | [GIS_EXPLANATION_AND_USAGE.md](GIS_EXPLANATION_AND_USAGE.md) | What is GIS and how we use it |
+| 10 | [BLOCKCHAIN_EXPLANATION_AND_USAGE.md](BLOCKCHAIN_EXPLANATION_AND_USAGE.md) | What is blockchain and how we use it |
+
+---
+
+## Project Levels
+
+| Level | Name | Purpose | Output | Status |
+|-------|------|---------|--------|--------|
+| **1** | High-Level Overview | Understand WHAT to build | Documents | **Complete** |
+| **2** | Detailed Design | Understand HOW to build in detail | Specs, wireframes, user stories | Next |
+| **3** | Development | Actually BUILD the system | Working code | Later |
+| **4** | Deployment | RELEASE and maintain | Live system | Later |
+
+### Level 1 - What We Completed
+
+- Clear understanding of the project
+- All stakeholders identified
+- Roles and permissions defined
+- Features listed
+- Database structure (overview)
+- Technical architecture decided
 
 **Depth:** Overview - enough to understand the project
 
-## Level 2 - What Comes Next
+### Level 2 - What Comes Next
 
 | Document | Purpose |
 |----------|---------|
@@ -62,7 +94,7 @@ A comprehensive traceability and halal certification management system for goat 
 
 **Depth:** Detailed - enough to START coding
 
-## Level 3 - Development
+### Level 3 - Development
 
 | Activity | Output |
 |----------|--------|
@@ -74,7 +106,7 @@ A comprehensive traceability and halal certification management system for goat 
 
 **Depth:** Actual code
 
-## Level 4 - Deployment
+### Level 4 - Deployment
 
 | Activity | Output |
 |----------|--------|
@@ -91,6 +123,7 @@ A comprehensive traceability and halal certification management system for goat 
 ## Overview
 
 Halal GOAT Bin is a multi-platform system designed to:
+
 - Track goats from farm to consumer
 - Manage halal certification and compliance
 - Provide GIS-based mapping of farms and facilities
@@ -99,23 +132,17 @@ Halal GOAT Bin is a multi-platform system designed to:
 
 ## Technology Stack
 
-| Layer | Technology |
-|-------|------------|
-| Frontend (Web) | Nuxt 3 (Vue 3) |
-| Backend API | Laravel 12 |
-| Mobile App | Flutter |
-| Database | PostgreSQL 16+ |
-| Authentication | Laravel Sanctum |
-| Cache | Redis |
-
-## Additional Documentation
-
-| Document | Description |
-|----------|-------------|
-| [GIS Explanation](GIS_EXPLANATION_AND_USAGE.md) | Geographic Information System usage |
-| [Blockchain Explanation](BLOCKCHAIN_EXPLANATION_AND_USAGE.md) | Blockchain integration details |
-| [Form Terminology](ADDENDUM_FORM_TERMINOLOGY_CHANGES.md) | Standard terminology definitions |
-| [Meeting Agenda](MEETING_AGENDA_CLARIFICATION.md) | Project meeting notes |
+| Layer | Technology | Version |
+|-------|------------|---------|
+| Frontend (Web) | Nuxt 3 (Vue 3) | Latest |
+| Backend API | Laravel | 12 |
+| Mobile App | Flutter | Latest |
+| Database | PostgreSQL | 16+ |
+| Authentication | Laravel Sanctum | Latest |
+| Cache | Redis | Latest |
+| Blockchain | TBD | - |
+| GIS/Maps | TBD | - |
+| SMS Gateway | TBD | - |
 
 ## Key Stakeholders
 
@@ -131,17 +158,24 @@ Halal GOAT Bin is a multi-platform system designed to:
 
 ```
 goatbin-project/
-├── README.md                              # This file
-├── STEP_01_STAKEHOLDERS.md               # Stakeholder documentation
-├── STEP_02_USER_ROLES_PERMISSIONS.md     # Roles and permissions
-├── STEP_03_BUSINESS_PROCESS_FLOW.md      # Business processes
-├── STEP_04_MODULES_FEATURES.md           # Features specification
-├── STEP_05_DATABASE_DESIGN.md            # Database design
-├── STEP_06_TECHNICAL_ARCHITECTURE.md     # Technical architecture
-├── GIS_EXPLANATION_AND_USAGE.md          # GIS documentation
-├── BLOCKCHAIN_EXPLANATION_AND_USAGE.md   # Blockchain documentation
-├── ADDENDUM_FORM_TERMINOLOGY_CHANGES.md  # Terminology guide
-└── MEETING_AGENDA_CLARIFICATION.md       # Meeting notes
+│
+├── CORE DOCUMENTATION
+│   ├── STEP_01_STAKEHOLDERS.md
+│   ├── STEP_02_USER_ROLES_PERMISSIONS.md
+│   ├── STEP_03_BUSINESS_PROCESS_FLOW.md
+│   ├── STEP_04_MODULES_FEATURES.md
+│   ├── STEP_05_DATABASE_DESIGN.md
+│   └── STEP_06_TECHNICAL_ARCHITECTURE.md
+│
+├── UPDATES & ACTION ITEMS
+│   ├── ADDENDUM_FORM_TERMINOLOGY_CHANGES.md
+│   └── MEETING_AGENDA_CLARIFICATION.md
+│
+├── REFERENCE / EDUCATIONAL
+│   ├── GIS_EXPLANATION_AND_USAGE.md
+│   └── BLOCKCHAIN_EXPLANATION_AND_USAGE.md
+│
+└── README.md
 ```
 
 ## License
@@ -150,4 +184,5 @@ goatbin-project/
 
 ---
 
-*This project is currently in the planning and documentation phase. Level 1 is complete and ready for clarification meeting before proceeding to Level 2 detailed design.*
+**Status:** Level 1 Complete
+**Next:** Clarification meeting, then Level 2 (Detailed Design)
