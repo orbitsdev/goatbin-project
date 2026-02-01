@@ -461,7 +461,117 @@ Based on Financial Forms, a **Financial Module** could include:
 
 ---
 
-## 10. Action Items
+## 10. Sample Data Examples (New Tables)
+
+This section provides sample data for the new reference tables introduced in this addendum.
+
+---
+
+### SAMPLE: production_types
+
+| id | name | description | status |
+|----|------|-------------|--------|
+| 1 | For Breeding | Goat kept to produce offspring | active |
+| 2 | For Slaughter | Goat raised for meat (chevon) | active |
+| 3 | For Dairy | Goat raised for milk production | active |
+
+---
+
+### SAMPLE: age_classes
+
+| id | name | code | min_age_days | max_age_days | gender | description |
+|----|------|------|--------------|--------------|--------|-------------|
+| 1 | Kid | KID | 0 | 30 | both | Newborn, less than 1 month |
+| 2 | Kids | KIDS | 31 | 90 | both | Young goat, 1-3 months |
+| 3 | Grower | GRW | 91 | 240 | both | Growing goat, 3-8 months |
+| 4 | Buck | BUCK | 241 | null | male | Adult male, 8+ months |
+| 5 | Doe | DOE | 241 | null | female | Adult female, 8+ months |
+
+---
+
+### SAMPLE: breeding_statuses
+
+| id | name | code | applicable_gender | description |
+|----|------|------|-------------------|-------------|
+| 1 | Doeling | DLG | female | Young female, never been bred |
+| 2 | Dry Does | DRY | female | Adult female, not pregnant and not lactating |
+| 3 | Pregnant | PRG | female | Female currently carrying baby |
+| 4 | Lactating | LAC | female | Female currently producing milk |
+| 5 | Buck | BCK | male | Male used for breeding |
+
+---
+
+### SAMPLE: breed_types
+
+| id | name | code | description |
+|----|------|------|-------------|
+| 1 | Native | NAT | Local/indigenous Philippine breed |
+| 2 | Upgrade | UPG | Native crossed with improved breed |
+| 3 | Cross | CRS | Mixed breeds |
+| 4 | Pure | PUR | Purebred (100% single breed) |
+
+---
+
+### SAMPLE: Updated goats table with new fields
+
+| id | goat_code | farm_id | breed | breed_type | gender | birth_date | age_class | production_type | breeding_status | dam_id | sire_id |
+|----|-----------|---------|-------|------------|--------|------------|-----------|-----------------|-----------------|--------|---------|
+| 1 | HGG-2025-00001 | 1 | Boer | Pure | male | 2024-03-15 | Buck | For Breeding | Buck | null | null |
+| 2 | HGG-2025-00002 | 1 | Anglo-Nubian | Upgrade | female | 2024-05-20 | Doe | For Breeding | Pregnant | null | null |
+| 3 | HGG-2025-00003 | 1 | Boer | Pure | female | 2025-01-10 | Kid | For Slaughter | Doeling | 2 | 1 |
+| 4 | HGG-2025-00004 | 1 | Native | Native | male | 2024-10-01 | Grower | For Slaughter | - | null | null |
+| 5 | HGG-2025-00005 | 2 | Boer Cross | Cross | female | 2024-02-15 | Doe | For Dairy | Lactating | null | null |
+
+---
+
+### SAMPLE: Goat with weight tracking
+
+| goat_code | weight_at_birth_kg | weight_at_3mo_kg | weight_at_8mo_kg | weight_current_kg | weaning_date | weaning_age_months |
+|-----------|--------------------|--------------------|-------------------|-------------------|--------------|--------------------|
+| HGG-2025-00001 | 3.5 | 15.2 | 28.5 | 42.0 | 2024-06-15 | 3 |
+| HGG-2025-00002 | 3.2 | 14.8 | 26.0 | 35.5 | 2024-08-20 | 3 |
+| HGG-2025-00003 | 3.0 | - | - | 4.5 | - | - |
+
+---
+
+### SAMPLE: Breeding records scenario
+
+**Scenario:** Doe #2 was bred with Buck #1, gave birth to Kid #3
+
+| Field | Value |
+|-------|-------|
+| Dam (Mother) | HGG-2025-00002 (Doe #2) |
+| Sire (Father) | HGG-2025-00001 (Buck #1) |
+| Last Breeding Date | 2024-08-10 |
+| Expected Kidding Date | 2025-01-07 (150 days gestation) |
+| Actual Birth Date | 2025-01-10 |
+| Offspring | HGG-2025-00003 (Kid #3) |
+| Birth Type | Single |
+| Birth Status | Alive |
+
+---
+
+### SAMPLE: Inventory Report (Form 1 equivalent)
+
+**Farm:** HGF-0001 (Dela Cruz Goat Farm)
+**Period:** January 2025
+
+| Class of Animals | Last Month | This Month | Added | Reduced | % Change |
+|------------------|------------|------------|-------|---------|----------|
+| Breeders - Doeling | 2 | 1 | 0 | 1 | -50% |
+| Breeders - Dry Does | 1 | 0 | 0 | 1 | -100% |
+| Breeders - Pregnant | 1 | 2 | 2 | 1 | +100% |
+| Breeders - Lactating | 2 | 2 | 1 | 1 | 0% |
+| Breeders - Buck | 2 | 2 | 0 | 0 | 0% |
+| Kids (1-3 mo) - Male | 1 | 2 | 1 | 0 | +100% |
+| Kids (1-3 mo) - Female | 1 | 1 | 1 | 1 | 0% |
+| Grower (3-8 mo) - Male | 3 | 2 | 0 | 1 | -33% |
+| Grower (3-8 mo) - Female | 2 | 3 | 1 | 0 | +50% |
+| **TOTAL** | **15** | **15** | **6** | **6** | **0%** |
+
+---
+
+## 11. Action Items
 
 | # | Action | When | Status |
 |---|--------|------|--------|
@@ -480,6 +590,6 @@ Based on Financial Forms, a **Financial Module** could include:
 
 ---
 
-*Document Version: 1.0*  
-*Last Updated: February 1, 2026*  
+*Document Version: 1.1*
+*Last Updated: February 1, 2026*
 *Related Documents: Step 4 (Modules), Step 5 (Database)*

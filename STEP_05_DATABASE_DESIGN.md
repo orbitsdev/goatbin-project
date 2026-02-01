@@ -847,6 +847,207 @@ When we proceed to Level 2, we will add:
 
 ---
 
+## 5.9 Sample Data Examples
+
+This section provides realistic sample data to help visualize what the database will contain.
+
+---
+
+### SAMPLE: users
+
+| id | name | email | phone | status |
+|----|------|-------|-------|--------|
+| 1 | Juan Dela Cruz | juan@email.com | 09171234567 | active |
+| 2 | Maria Santos | maria@email.com | 09181234567 | active |
+| 3 | Ahmed Abdullah | ahmed@ncmf.gov.ph | 09191234567 | active |
+| 4 | Pedro Reyes | pedro@lgu-maasim.gov.ph | 09201234567 | active |
+
+---
+
+### SAMPLE: roles
+
+| id | name | display_name | level |
+|----|------|--------------|-------|
+| 1 | admin | System Admin | super |
+| 2 | farm_owner | Farm Owner | head |
+| 3 | farm_worker | Farm Worker | staff |
+| 4 | certifier_head | Certifier Head (NCMF) | head |
+| 5 | lgu_staff | LGU Staff | staff |
+| 6 | consumer | Consumer | public |
+
+---
+
+### SAMPLE: farms
+
+| id | farm_code | name | owner_id | barangay | municipality | province | certification_status |
+|----|-----------|------|----------|----------|--------------|----------|---------------------|
+| 1 | HGF-0001 | Dela Cruz Goat Farm | 1 | Tinoto | Maasim | Sarangani | certified |
+| 2 | HGF-0002 | Santos Farm | 2 | Lamian | Kiamba | Sarangani | pending |
+| 3 | HGF-0003 | Green Valley Farm | 5 | Ned | Lake Sebu | South Cotabato | not_applied |
+
+---
+
+### SAMPLE: goats
+
+| id | goat_code | farm_id | breed | gender | birth_date | age_class | status |
+|----|-----------|---------|-------|--------|------------|-----------|--------|
+| 1 | HGG-2025-00001 | 1 | Boer | male | 2024-03-15 | Buck | active |
+| 2 | HGG-2025-00002 | 1 | Anglo-Nubian | female | 2024-05-20 | Doe | active |
+| 3 | HGG-2025-00003 | 1 | Native | female | 2025-01-10 | Kid | active |
+| 4 | HGG-2025-00004 | 2 | Boer Cross | male | 2024-08-01 | Grower | active |
+| 5 | HGG-2025-00005 | 1 | Boer | male | 2023-06-15 | Buck | slaughtered |
+
+---
+
+### SAMPLE: health_records
+
+| id | goat_id | record_date | illness | symptoms | treatment | medicine | is_halal | recovery_status |
+|----|---------|-------------|---------|----------|-----------|----------|----------|-----------------|
+| 1 | 2 | 2025-01-15 | Parasites | Weight loss, dull coat | Deworming | Ivermectin | Yes | recovered |
+| 2 | 3 | 2025-01-20 | Diarrhea | Loose stool | Oral rehydration | Electrolytes | Yes | recovered |
+| 3 | 4 | 2025-01-25 | Foot rot | Limping | Hoof trim + spray | Zinc Sulfate | Yes | ongoing |
+
+---
+
+### SAMPLE: feed_records
+
+| id | farm_id | feed_date | feed_type | brand | quantity_kg | is_halal | halal_flag_reason |
+|----|---------|-----------|-----------|-------|-------------|----------|-------------------|
+| 1 | 1 | 2025-01-15 | Commercial Feed | B-Meg Goat Grower | 50 | Yes | - |
+| 2 | 1 | 2025-01-15 | Roughage | Natural Grass | 100 | Yes | - |
+| 3 | 2 | 2025-01-16 | Concentrate | Unknown Brand | 25 | No | Contains animal by-products |
+
+---
+
+### SAMPLE: vaccinations
+
+| id | goat_id | vaccination_date | vaccine_name | dosage | next_due_date | administered_by |
+|----|---------|------------------|--------------|--------|---------------|-----------------|
+| 1 | 1 | 2024-06-15 | PPR Vaccine | 1 ml | 2025-06-15 | Dr. Garcia |
+| 2 | 2 | 2024-08-20 | Enterotoxemia | 2 ml | 2025-08-20 | Dr. Garcia |
+| 3 | 1 | 2025-01-10 | Dewormer | 5 ml | 2025-04-10 | Farm Worker |
+
+---
+
+### SAMPLE: slaughter_records
+
+| id | slaughter_code | slaughterhouse | goat_id | slaughter_date | slaughterer_name | live_weight_kg | carcass_weight_kg | is_halal_verified |
+|----|----------------|----------------|---------|----------------|------------------|----------------|-------------------|-------------------|
+| 1 | HGS-2025-00001 | Maasim Halal Slaughterhouse | 5 | 2025-01-28 | Ustadz Ibrahim | 35.5 | 17.2 | Yes |
+
+---
+
+### SAMPLE: qr_codes
+
+| id | qr_code | slaughter_record_id | goat_id | farm_id | product_type | weight_kg | scan_count |
+|----|---------|---------------------|---------|---------|--------------|-----------|------------|
+| 1 | HGBP-2026-00001 | 1 | 5 | 1 | Chevon (whole) | 17.2 | 0 |
+
+---
+
+### SAMPLE: certification_applications
+
+| id | application_code | farm_id | applicant_id | application_date | application_type | status |
+|----|------------------|---------|--------------|------------------|------------------|--------|
+| 1 | HGC-APP-2025-001 | 1 | 1 | 2024-12-01 | new | approved |
+| 2 | HGC-APP-2025-002 | 2 | 2 | 2025-01-15 | new | under_review |
+| 3 | HGC-APP-2025-003 | 3 | 5 | 2025-01-28 | new | pending |
+
+---
+
+### SAMPLE: certifications
+
+| id | certificate_code | farm_id | issued_date | expiry_date | status | issued_by |
+|----|------------------|---------|-------------|-------------|--------|-----------|
+| 1 | HGC-CERT-2025-001 | 1 | 2025-01-01 | 2026-01-01 | active | Ahmed Abdullah |
+
+---
+
+### SAMPLE: compliance_checks
+
+| id | farm_id | check_date | check_type | feed_compliant | medicine_compliant | distance_compliant | overall_compliant | compliance_score |
+|----|---------|------------|------------|----------------|--------------------|--------------------|-------------------|------------------|
+| 1 | 1 | 2025-01-15 | auto | Yes | Yes | Yes | Yes | 100% |
+| 2 | 2 | 2025-01-16 | auto | No | Yes | Yes | No | 75% |
+| 3 | 1 | 2025-01-28 | manual | Yes | Yes | Yes | Yes | 100% |
+
+---
+
+### SAMPLE: compliance_warnings
+
+| id | farm_id | warning_type | warning_date | description | status |
+|----|---------|--------------|--------------|-------------|--------|
+| 1 | 2 | non_halal_feed | 2025-01-16 | Feed record contains non-halal feed (Unknown Brand) | open |
+
+---
+
+### SAMPLE: provinces, municipalities, barangays
+
+**provinces:**
+| id | name | region |
+|----|------|--------|
+| 1 | Sarangani | Region XII |
+| 2 | South Cotabato | Region XII |
+| 3 | Sultan Kudarat | Region XII |
+
+**municipalities:**
+| id | province_id | name |
+|----|-------------|------|
+| 1 | 1 | Maasim |
+| 2 | 1 | Kiamba |
+| 3 | 1 | Maitum |
+| 4 | 2 | Lake Sebu |
+| 5 | 2 | Surallah |
+
+**barangays:**
+| id | municipality_id | name |
+|----|-----------------|------|
+| 1 | 1 | Tinoto |
+| 2 | 1 | Kamanga |
+| 3 | 2 | Lamian |
+| 4 | 4 | Ned |
+| 5 | 4 | Poblacion |
+
+---
+
+### SAMPLE: slaughterhouses
+
+| id | code | name | municipality_id | is_halal_certified | status |
+|----|------|------|-----------------|--------------------|----|
+| 1 | SH-001 | Maasim Halal Slaughterhouse | 1 | Yes | active |
+| 2 | SH-002 | Kiamba Public Slaughterhouse | 2 | Yes | active |
+
+---
+
+### SAMPLE: haram_facilities
+
+| id | name | type | municipality_id | latitude | longitude |
+|----|------|------|-----------------|----------|-----------|
+| 1 | ABC Piggery | pig_farm | 1 | 5.8521 | 125.0147 |
+| 2 | XYZ Hog Farm | pig_farm | 2 | 5.9832 | 124.6214 |
+
+---
+
+### SAMPLE: audit_logs
+
+| id | user_id | action | entity_type | entity_id | old_values | new_values | created_at |
+|----|---------|--------|-------------|-----------|------------|------------|------------|
+| 1 | 1 | create | goat | 3 | null | {"goat_code":"HGG-2025-00003"...} | 2025-01-10 08:30:00 |
+| 2 | 3 | update | certification | 1 | {"status":"pending"} | {"status":"active"} | 2025-01-01 10:00:00 |
+| 3 | 1 | create | feed_record | 1 | null | {"feed_type":"Commercial Feed"...} | 2025-01-15 14:20:00 |
+
+---
+
+### SAMPLE: notifications
+
+| id | user_id | type | title | message | read_at |
+|----|---------|------|-------|---------|---------|
+| 1 | 1 | certification | Certification Approved | Your farm HGF-0001 has been certified! | 2025-01-01 12:00:00 |
+| 2 | 2 | warning | Compliance Warning | Non-halal feed detected in your records | null |
+| 3 | 1 | reminder | Vaccination Due | Goat HGG-2025-00001 PPR vaccine due in 30 days | null |
+
+---
+
 ## ✅ STEP 5 COMPLETE (OVERVIEW)
 
 **Status:** High-Level Overview — Detailed design to follow in Level 2
@@ -858,6 +1059,6 @@ When we proceed to Level 2, we will add:
 
 ---
 
-*Document Version: 1.0 (OVERVIEW)*  
-*Last Updated: February 1, 2026*  
+*Document Version: 1.1 (OVERVIEW)*
+*Last Updated: February 1, 2026*
 *Status: High-Level — Not Final*
