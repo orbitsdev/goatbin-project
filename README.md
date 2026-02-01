@@ -59,6 +59,23 @@ A comprehensive traceability and halal certification management system for goat 
 | 9 | [GIS_EXPLANATION_AND_USAGE.md](GIS_EXPLANATION_AND_USAGE.md) | What is GIS and how we use it |
 | 10 | [BLOCKCHAIN_EXPLANATION_AND_USAGE.md](BLOCKCHAIN_EXPLANATION_AND_USAGE.md) | What is blockchain and how we use it |
 
+### Reference Forms (Images)
+
+Existing goat farm forms used as reference for system design. Located in [`/reference`](reference/) folder.
+
+| # | Image | Description |
+|---|-------|-------------|
+| 1 | [01_baseline_survey_personal_farm_info.jpg](reference/01_baseline_survey_personal_farm_info.jpg) | Baseline Survey - Personal & Farm Information |
+| 2 | [02_stock_inventory_breeding.jpg](reference/02_stock_inventory_breeding.jpg) | Stock Information - Inventory & Breeding |
+| 3 | [03_feeds_feeding_system.jpg](reference/03_feeds_feeding_system.jpg) | Feeds and Feeding System |
+| 4 | [04_health_management_husbandry.jpg](reference/04_health_management_husbandry.jpg) | Health Management & Husbandry Practices |
+| 5 | [05_housing_marketing_support.jpg](reference/05_housing_marketing_support.jpg) | Housing, Marketing & Support Services |
+| 6 | [06_problems_checklist.jpg](reference/06_problems_checklist.jpg) | Problems Checklist & Marketing Issues |
+| 7 | [07_form1_livestock_inventory.jpg](reference/07_form1_livestock_inventory.jpg) | Form 1 - Livestock Inventory Record |
+| 8 | [08_form2_production_reproduction.jpg](reference/08_form2_production_reproduction.jpg) | Form 2 - Production & Reproduction Record |
+| 9 | [09_form3_disease_parasite_control.jpg](reference/09_form3_disease_parasite_control.jpg) | Form 3 - Disease & Parasite Control |
+| 10 | [10_financial_report_sales.jpg](reference/10_financial_report_sales.jpg) | Financial Report - Cash Inflow/Sales |
+
 ---
 
 ## Project Levels
@@ -174,6 +191,18 @@ goatbin-project/
 ├── REFERENCE / EDUCATIONAL
 │   ├── GIS_EXPLANATION_AND_USAGE.md
 │   └── BLOCKCHAIN_EXPLANATION_AND_USAGE.md
+│
+├── reference/                          <- Reference form images
+│   ├── 01_baseline_survey_personal_farm_info.jpg
+│   ├── 02_stock_inventory_breeding.jpg
+│   ├── 03_feeds_feeding_system.jpg
+│   ├── 04_health_management_husbandry.jpg
+│   ├── 05_housing_marketing_support.jpg
+│   ├── 06_problems_checklist.jpg
+│   ├── 07_form1_livestock_inventory.jpg
+│   ├── 08_form2_production_reproduction.jpg
+│   ├── 09_form3_disease_parasite_control.jpg
+│   └── 10_financial_report_sales.jpg
 │
 └── README.md
 ```
