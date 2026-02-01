@@ -59,6 +59,21 @@ A comprehensive traceability and halal certification management system for goat 
 | 9 | [GIS_EXPLANATION_AND_USAGE.md](GIS_EXPLANATION_AND_USAGE.md) | What is GIS and how we use it |
 | 10 | [BLOCKCHAIN_EXPLANATION_AND_USAGE.md](BLOCKCHAIN_EXPLANATION_AND_USAGE.md) | What is blockchain and how we use it |
 
+### Database Tables Reference
+
+Complete database tables with columns and sample data. Located in [`/database-reference`](database-reference/) folder.
+
+| File | Category | Tables |
+|------|----------|--------|
+| [00_INDEX.md](database-reference/00_INDEX.md) | Index | Overview of all 35 tables |
+| [01_USER_MANAGEMENT.md](database-reference/01_USER_MANAGEMENT.md) | User Management | users, roles, user_roles |
+| [02_FARM_MANAGEMENT.md](database-reference/02_FARM_MANAGEMENT.md) | Farm Management | farms, goats, health_records, vaccinations, feed_records, inflows, outflows |
+| [03_TRACEABILITY.md](database-reference/03_TRACEABILITY.md) | Traceability | transports, slaughter_records, qr_codes, blockchain_logs |
+| [04_CERTIFICATION.md](database-reference/04_CERTIFICATION.md) | Certification | certification_applications, certification_reviews, certifications |
+| [05_COMPLIANCE.md](database-reference/05_COMPLIANCE.md) | Compliance | compliance_checks, compliance_warnings |
+| [06_REFERENCE_DATA.md](database-reference/06_REFERENCE_DATA.md) | Reference Data | breeds, breed_types, production_types, age_classes, breeding_statuses, feed_types, medicine_types, illness_types, provinces, municipalities, barangays, slaughterhouses, haram_facilities |
+| [07_SYSTEM.md](database-reference/07_SYSTEM.md) | System | audit_logs, notifications, settings |
+
 ### Reference Forms (Images)
 
 Existing goat farm forms used as reference for system design. Located in [`/reference`](reference/) folder.
@@ -191,6 +206,16 @@ goatbin-project/
 ├── REFERENCE / EDUCATIONAL
 │   ├── GIS_EXPLANATION_AND_USAGE.md
 │   └── BLOCKCHAIN_EXPLANATION_AND_USAGE.md
+│
+├── database-reference/              <- Database tables with sample data
+│   ├── 00_INDEX.md
+│   ├── 01_USER_MANAGEMENT.md
+│   ├── 02_FARM_MANAGEMENT.md
+│   ├── 03_TRACEABILITY.md
+│   ├── 04_CERTIFICATION.md
+│   ├── 05_COMPLIANCE.md
+│   ├── 06_REFERENCE_DATA.md
+│   └── 07_SYSTEM.md
 │
 ├── reference/                          <- Reference form images
 │   ├── 01_baseline_survey_personal_farm_info.jpg
