@@ -6,6 +6,14 @@ A comprehensive traceability and halal certification management system for goat 
 
 ---
 
+## Project Overview
+
+![SMART GOAT BIN System Overview](reference/project_2.png)
+
+**Video Presentation:** [Watch Project Overview on Facebook](https://www.facebook.com/share/v/19gSmy4PZk/)
+
+---
+
 ## Project Status
 
 ```
@@ -80,6 +88,7 @@ Existing goat farm forms used as reference for system design. Located in [`/refe
 
 | # | Image | Description |
 |---|-------|-------------|
+| 0 | [project_2.png](reference/project_2.png) | System Architecture Overview Diagram |
 | 1 | [01_baseline_survey_personal_farm_info.jpg](reference/01_baseline_survey_personal_farm_info.jpg) | Baseline Survey - Personal & Farm Information |
 | 2 | [02_stock_inventory_breeding.jpg](reference/02_stock_inventory_breeding.jpg) | Stock Information - Inventory & Breeding |
 | 3 | [03_feeds_feeding_system.jpg](reference/03_feeds_feeding_system.jpg) | Feeds and Feeding System |
@@ -218,6 +227,7 @@ goatbin-project/
 │   └── 07_SYSTEM.md
 │
 ├── reference/                          <- Reference form images
+│   ├── project_2.png                      <- System overview diagram
 │   ├── 01_baseline_survey_personal_farm_info.jpg
 │   ├── 02_stock_inventory_breeding.jpg
 │   ├── 03_feeds_feeding_system.jpg
