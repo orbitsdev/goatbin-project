@@ -10,7 +10,7 @@ A comprehensive traceability and halal certification management system for goat 
 
 ![SMART GOAT BIN System Overview](reference/project_2.png)
 
-**Video Presentation:** [Watch Project Overview on Facebook](https://www.facebook.com/share/v/19gSmy4PZk/)
+**Video Presentation:** [Watch Project Overview on Facebook](https://www.facebook.com/share/v/19gSmy4PZk/) (Project 2 starts at 5:26)
 
 ---
 
